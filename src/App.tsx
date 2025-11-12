@@ -47,6 +47,7 @@ function App() {
           </div>
          </div>
 
+
           <div>
               <h1 className="centering">
                   Meet our Customers
