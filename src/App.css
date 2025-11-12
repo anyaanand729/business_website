@@ -1,0 +1,27 @@
+#logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.boxes{
+  display: flex;
+  width: 100%;
+  padding-top: 30px;
+}
+.centering{
+  text-align: center;
+}
+.flexItem{
+  flex: 1;
+  padding-bottom: 10px;
+  text-align: center;
+  border: 3px solid #FB6F92;
+}
+#image{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body{
+  font-family: "Century Gothic", monospace;
+}

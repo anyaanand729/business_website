@@ -1,0 +1,22 @@
+.NavBar {
+    color: #FB6F92;
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: transparent;
+    border: none;
+
+}
+.NavBar:hover {
+    color: #FFC2D1;
+}
+#topPart{
+    background-color: #F2EBE2;
+    position:fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100vw;
+    margin-bottom: 50px;
+    padding: 10px;
+
+}
