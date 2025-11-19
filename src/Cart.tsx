@@ -21,15 +21,21 @@ function getTotalCost(){
     for(let i=0; i<arrayLength; i++){
         totalCost += 99.99;
     }
-    return totalCost;
+    return totalCost.toFixed(2);
 }
 function Clear(){
     localStorage.clear();
     setItems([]);
 }
-  function deleteItem(){
-     localStorage.removeItem('bookingInfo');
-     setItems([]);
+  function deleteItem(i: number){
+     const newItem = [];
+     for(let j=0; j<items.length; j++) {
+         if(j !== i){
+             newItem.push(items[j]);
+         }
+     }
+     setItems(newItem);
+     localStorage.setItem("bookingInfo", JSON.stringify(newItem));
   }
 
 function getMonth(month: number){
@@ -98,29 +104,29 @@ const [items, setItems] = useState(getItems("bookingInfo"))
     return (
         <>
             <div>
-                <h1 id='titleForCart'>
-                    Appointments
+                <h1 id="titleForCart">
+                    💅Appointments💅
                 </h1>
-                <h1>
+                <h1 className="centering">
                     Check Your Appointment
                 </h1>
-                <h2>
-                    In military time
-                </h2>
+                <h3 className="centering">
+                    In Military Time
+                </h3>
             </div>
-            {items.map((item, i) => <div key={i}>
-                Booking
-                For {getDayOfWeek(dayjs(item).day())}, {getMonth(dayjs(item).month())} {dayjs(item).date()}, {dayjs(item).year()} at {dayjs(item).hour()} : {dayjs(item).minute()} for
-                $99.99
-                <button onClick={() => deleteItem()}>Clear</button>
+
+            {items.map((item, i) => <div id="flexingInfo" key={i}>
+                {getDayOfWeek(dayjs(item).day())}, {getMonth(dayjs(item).month())} {dayjs(item).date()}, {dayjs(item).year()} at {dayjs(item).hour()}:{dayjs(item).minute()} for $99.99
+                <button className='cartButton' onClick={() => deleteItem(i)}>Delete</button>
             </div>)}
 
-            <h2>
+
+            <h2 className="centering">
                 Total Cost: ${getTotalCost()}
             </h2>
 
-            <div>
-                <button onClick={()=>Clear()}>Clear</button>
+            <div id="centeringButton">
+                <button className='clearButts' onClick={()=>Clear()}>Clear</button>
             </div>
         </>
     )

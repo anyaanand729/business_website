@@ -15,14 +15,16 @@ function Product() {
         <>
            <div id="productTitle">
                <h1>
-                   Scheduling
+                   ✂️Scheduling✂️
                </h1>
            </div>
 
             <div>
                 Our salon’s activity is providing personalized beauty and wellness services that help clients look and feel their best. We create and deliver our services through a combination of expert staff, high-quality products, and a welcoming environment. From haircuts, coloring, and styling to skincare, nails, and makeup, each service is designed with attention to detail and tailored to the individual client. We focus on customer service excellence, ensuring that every visit is relaxing and enjoyable.
             </div>
-
+            <h1>
+                Each service costs $99.99
+            </h1>
 
             <div id="muiThing">
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
