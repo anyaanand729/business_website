@@ -116,8 +116,13 @@ const [items, setItems] = useState(getItems("bookingInfo"))
             </div>
 
             {items.map((item, i) => <div id="flexingInfo" key={i}>
-                {getDayOfWeek(dayjs(item).day())}, {getMonth(dayjs(item).month())} {dayjs(item).date()}, {dayjs(item).year()} at {dayjs(item).hour()}:{dayjs(item).minute()} for $99.99
+                {getDayOfWeek(dayjs(item).day())}, {getMonth(dayjs(item).month())} {dayjs(item).date()}, {dayjs(item).year()} at {dayjs(item).hour()}:{dayjs(item).minute()}
+                <p id='money'>
+                $99.99
+                </p>
+                <div className="centeringButton">
                 <button className='cartButton' onClick={() => deleteItem(i)}>Delete</button>
+            </div>
             </div>)}
 
 
@@ -125,7 +130,7 @@ const [items, setItems] = useState(getItems("bookingInfo"))
                 Total Cost: ${getTotalCost()}
             </h2>
 
-            <div id="centeringButton">
+            <div className="centeringButton">
                 <button className='clearButts' onClick={()=>Clear()}>Clear</button>
             </div>
         </>
